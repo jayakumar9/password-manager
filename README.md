@@ -21,6 +21,56 @@ A secure password manager application built with the MERN stack (MongoDB, Expres
 - **Authentication**: JWT (JSON Web Tokens)
 - **File Storage**: Local filesystem with secure access
 
+## Project Structure
+
+```
+password-manager/
+├── backend/
+│   ├── config/
+│   │   ├── db.js                 # Database configuration
+│   │   │   └── default.json          # Default configuration
+│   │   ├── middleware/
+│   │   │   ├── auth.js               # Authentication middleware
+│   │   │   ├── error.js             # Error handling middleware
+│   │   │   └── upload.js            # File upload middleware
+│   │   ├── models/
+│   │   │   ├── Account.js           # Account model schema
+│   │   │   └── User.js              # User model schema
+│   │   ├── routes/
+│   │   │   ├── accountRoutes.js     # Account routes
+│   │   │   ├── authRoutes.js        # Authentication routes
+│   │   │   └── userRoutes.js        # User routes
+│   │   ├── uploads/                  # File upload directory
+│   │   ├── .env                     # Environment variables
+│   │   ├── package.json             # Backend dependencies
+│   │   └── server.js                # Express server setup
+│   │
+│   ├── frontend/
+│   │   ├── public/
+│   │   │   ├── index.html           # HTML template
+│   │   │   └── favicon.ico          # App favicon
+│   │   ├── src/
+│   │   │   ├── components/          # React components
+│   │   │   │   ├── Auth/
+│   │   │   │   │   ├── Login.js
+│   │   │   │   │   └── Register.js
+│   │   │   │   ├── Dashboard/
+│   │   │   │   │   └── Dashboard.js
+│   │   │   │   └── common/          # Shared components
+│   │   │   ├── context/
+│   │   │   │   └── AuthContext.js   # Authentication context
+│   │   │   ├── styles/
+│   │   │   │   └── tailwind.css     # Tailwind styles
+│   │   │   ├── App.js               # Main App component
+│   │   │   └── index.js             # React entry point
+│   │   ├── package.json             # Frontend dependencies
+│   │   └── tailwind.config.js       # Tailwind configuration
+│   │
+│   ├── .gitignore                   # Git ignore rules
+│   └── README.md                    # Project documentation
+└── package.json                 # Root package.json
+```
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
