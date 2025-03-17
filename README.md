@@ -1,86 +1,127 @@
 # Password Manager Application
 
-A secure password manager application built with the MERN stack (MongoDB, Express.js, React, Node.js).
+A secure password manager application built with the MERN stack (MongoDB, Express.js, React, Node.js) that allows users to securely store and manage their account credentials with file attachments and automatic logo fetching.
 
 ## Features
 
-- User authentication with JWT
-- Secure password storage
-- Password generation
-- File attachments
-- Website logo fetching
-- Responsive design
-- Dark mode interface
+- 🔐 Secure user authentication with JWT
+- 🔑 Password storage with encryption
+- ⚡ Automatic password generation
+- 📎 File attachments support
+- 🌐 Automatic website logo fetching
+- 🎨 Dark mode interface
+- 📱 Responsive design for all devices
+- 🛡️ Protected API routes with rate limiting
+
+## Tech Stack
+
+- **Frontend**: React.js, TailwindCSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB Atlas
+- **Authentication**: JWT (JSON Web Tokens)
+- **File Storage**: Local filesystem with secure access
 
 ## Prerequisites
 
+Before you begin, ensure you have the following installed:
 - Node.js (v14 or higher)
+- npm (v6 or higher)
 - MongoDB Atlas account
-- npm or yarn package manager
+- Git
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/jayakumar9/password-manager.git
 cd password-manager
 ```
 
-2. Install dependencies:
+2. Install backend dependencies:
 ```bash
-# Install backend dependencies
 cd backend
 npm install
+```
 
-# Install frontend dependencies
+3. Install frontend dependencies:
+```bash
 cd ../frontend
 npm install
 ```
 
-3. Set up environment variables:
+4. Configure environment variables:
 
-Create a `.env` file in the backend directory with the following variables:
-```
+Create a `.env` file in the backend directory:
+```env
 PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+MONGODB_URI=your_mongodb_atlas_connection_string
+JWT_SECRET=your_secure_jwt_secret_key
 ```
 
-4. Start the application:
-
+5. Create required directories:
 ```bash
-# Start backend server (from backend directory)
-npm run dev
+mkdir backend/uploads
+```
 
-# Start frontend development server (from frontend directory)
+## Running the Application
+
+1. Start the backend server:
+```bash
+cd backend
+npm run dev
+```
+
+2. In a new terminal, start the frontend:
+```bash
+cd frontend
 npm start
 ```
 
-## Usage
+The application will be available at:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5000
 
-1. Register a new account or login with existing credentials
-2. Add accounts with website, username, and password
-3. Upload attachments (optional)
-4. Generate secure passwords
-5. View and manage saved accounts
+## API Endpoints
 
-## Security Features
+### Authentication
+- POST `/api/auth/register` - Register new user
+- POST `/api/auth/login` - Login user
 
-- Passwords are securely stored
-- JWT authentication
-- Protected API routes
+### Accounts
+- GET `/api/accounts` - Get all accounts
+- POST `/api/accounts` - Create new account
+- PUT `/api/accounts/:id` - Update account
+- DELETE `/api/accounts/:id` - Delete account
+- GET `/api/accounts/generate-password` - Generate secure password
+
+## Security Measures
+
+- Password hashing using bcrypt
+- JWT for secure authentication
 - File upload validation
-- Rate limiting
 - CORS protection
+- Rate limiting on API endpoints
+- Secure password generation
+- Protected file access
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create your feature branch: `git checkout -b feature/YourFeature`
+3. Commit your changes: `git commit -m 'Add YourFeature'`
+4. Push to the branch: `git push origin feature/YourFeature`
 5. Open a Pull Request
+
+## Troubleshooting
+
+If you encounter any issues:
+
+1. Ensure MongoDB is running and accessible
+2. Check all environment variables are set correctly
+3. Verify all dependencies are installed
+4. Clear browser cache and local storage
+5. Check console for error messages
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License. 
