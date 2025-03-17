@@ -5,6 +5,8 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const path = require('path');
 const mongoose = require('mongoose');
+const userRoutes = require('./routes/userRoutes');
+const accountRoutes = require('./routes/accountRoutes');
 
 // Load env vars
 dotenv.config();
@@ -75,8 +77,8 @@ app.use('/api/', limiter);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Mount routers
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/accounts', require('./routes/accountRoutes'));
+app.use('/api/users', userRoutes);
+app.use('/api/accounts', accountRoutes);
 
 // Health Check Endpoint with more detailed information
 app.get('/api/health', (req, res) => {
