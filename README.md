@@ -53,9 +53,31 @@ npm install
 
 Create a `.env` file in the backend directory:
 ```env
+# Server Configuration
 PORT=5000
+NODE_ENV=development
+
+# MongoDB Configuration
 MONGODB_URI=your_mongodb_atlas_connection_string
+# Example: mongodb+srv://username:password@cluster.mongodb.net/password_manager?retryWrites=true&w=majority
+
+# JWT Configuration
 JWT_SECRET=your_secure_jwt_secret_key
+JWT_EXPIRE=30d                  # Token expiration time (30 days)
+
+# Rate Limiting
+RATE_LIMIT_WINDOW=15           # Time window in minutes
+RATE_LIMIT_MAX=100             # Maximum requests per window
+
+# File Upload Configuration
+MAX_FILE_SIZE=5                # Maximum file size in MB
+ALLOWED_FILE_TYPES=image/jpeg,image/png,image/gif,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document
+
+# Optional: Email Configuration (if implementing email notifications)
+# SMTP_HOST=smtp.gmail.com
+# SMTP_PORT=587
+# SMTP_USER=your_email@gmail.com
+# SMTP_PASS=your_app_specific_password
 ```
 
 5. Create required directories:
